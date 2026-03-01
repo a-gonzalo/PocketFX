@@ -6,6 +6,8 @@ Estás asistiendo en el desarrollo de una aplicación web utilizando **PocketFX*
 - Es una Single Page Application (SPA) estricta separada en Modelo-Vista-Controlador (MVC).
 - **Backend/Estado:** Utiliza exclusivamente **PocketBase** para la base de datos, autenticación y estado global.
 
+> 📝 **Nota:** Asegúrate de enlazar `src/core/pocketfx.css` desde tu HTML principal (por ejemplo `<link rel="stylesheet" href="/src/core/pocketfx.css">`) para que los estilos de modales y otros componentes funcionen correctamente.
+
 ## 2. Arquitectura y Reglas Estrictas (¡IMPORTANTE!)
 Al escribir código para este proyecto, DEBES obedecer las siguientes reglas:
 

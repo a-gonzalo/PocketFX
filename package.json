@@ -1,0 +1,25 @@
+{
+  "name": "pocketfx",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Lightweight SPA framework inspired by JavaFX/FXML",
+  "main": "build/pocketfx.cjs.js",
+  "module": "build/pocketfx.esm.js",
+  "browser": "build/pocketfx.umd.js",
+  "files": [
+    "src/",
+    "build/"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": ["pocketfx","framework","fxml","spa"],
+  "author": "a-gonzalo",
+  "license": "MIT",
+  "devDependencies": {
+    "rollup": "^3.20.0",
+    "@rollup/plugin-node-resolve": "^15.0.0",
+    "@rollup/plugin-commonjs": "^24.0.0"
+  }
+}

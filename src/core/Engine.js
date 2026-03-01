@@ -1,4 +1,5 @@
-import { pb } from '../app.js'; // Pendiente incorporarlo dentro del engine como unidad
+// the global PocketBase client is not bundled; applications should
+// register their own instance via `PocketFX.registerService('pb', pb)`
 import { FXML } from './FXML.js';
 
 export class PocketFX {
@@ -100,6 +101,8 @@ export class PocketFX {
     }
 }
 
-// register the global PocketBase instance by default so controllers can simply
-// call `this.services.get('pb')` if they prefer not to rely on `this.pb`.
-PocketFX.registerService('pb', pb);
+// if a global `pb` variable is present (legacy), register it automatically.
+// otherwise consumers should register their PocketBase instance manually.
+if (typeof pb !== 'undefined') {
+    PocketFX.registerService('pb', pb);
+}

@@ -1,0 +1,53 @@
+/* Basic framework styles for PocketFX components */
+
+/* Stage (modal) overlay */
+.pfx-stage-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.pfx-stage-window {
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.pfx-stage-header {
+    padding: 0.5em 1em;
+    background: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pfx-stage-title {
+    font-weight: bold;
+}
+
+.pfx-stage-close {
+    background: transparent;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.pfx-stage-content {
+    padding: 1em;
+    overflow: auto;
+    flex: 1 1 auto;
+}
