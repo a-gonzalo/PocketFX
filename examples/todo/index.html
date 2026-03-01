@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo PocketFX - ToDo</title>
+    <!-- enlaza los estilos desde el paquete instalado -->
+    <link rel="stylesheet" href="node_modules/pocketfx/src/core/pocketfx.css">
+</head>
+<body>
+    <h1>ToDo demo</h1>
+    <div id="app"></div>
+
+    <script type="module">
+        import { SceneManager } from './node_modules/pocketfx/build/pocketfx.esm.js';
+        import { TodoController } from './src/controllers/TodoController.js';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const app = document.getElementById('app');
+            SceneManager.setScene(app, TodoController);
+        });
+    </script>
+</body>
+</html>

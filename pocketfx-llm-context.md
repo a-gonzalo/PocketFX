@@ -2,6 +2,26 @@
 
 ## 1. Filosofía Core
 Estás asistiendo en el desarrollo de una aplicación web utilizando **PocketFX**, un framework propietario y opinado basado en Vanilla JS y fuertemente inspirado en la arquitectura de **JavaFX / FXML**.
+
+## 0. Instalación y reutilización
+PocketFX está pensado para ser consumido como un paquete NPM/ESM, lo que evita tener
+que clonar o copiar manualmente el código fuente en cada proyecto. Las formas más
+comunes de integrarlo son:
+
+- `npm install pocketfx` (registro público o privado).
+- `npm install https://github.com/a-gonzalo/PocketFX.git` ó apuntando a una rama/tag.
+- `npm install ../ruta/local` durante desarrollo; la dependencia se enlaza.
+- Incluir el bundle UMD (`build/pocketfx.umd.js`) directamente con un `<script>
+  src="..."></script>` si no se usa un empaquetador.
+
+En cualquier caso el paquete exporta los componentes principales (`PocketFX`,
+`SceneManager`, `Stage`, `FXML`, etc.). Asegúrate de también enlazar los estilos
+con `<link rel="stylesheet" href="node_modules/pocketfx/src/core/pocketfx.css">
+` (o desde el bundle) para que modales y otros widgets funcionen correctamente.
+
+Un ejemplo funcional se proporciona en el directorio `examples/todo` del repositorio,
+que muestra un proyecto mínimo que instala la biblioteca y usa las vistas/controlladores.
+
 - **No es React, Vue ni Svelte.** No hay Virtual DOM ni SSR.
 - Es una Single Page Application (SPA) estricta separada en Modelo-Vista-Controlador (MVC).
 - **Backend/Estado:** Utiliza exclusivamente **PocketBase** para la base de datos, autenticación y estado global.
