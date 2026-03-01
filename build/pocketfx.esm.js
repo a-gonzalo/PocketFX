@@ -29,6 +29,15 @@ class PocketFX {
      * will cache the raw HTML so subsequent loads are faster and it performs
      * a shallow DOM clone for each invocation.
      */
+    /**
+     * Base path used when fetching views. Default is a relative path so that
+     * applications hosted in a subfolder will still resolve correctly. You can
+     * override it before calling `SceneManager` if your layout differs.
+     *
+     * e.g. `PocketFX.viewPath = '/src/views/';`
+     */
+    static viewPath = 'src/views/';
+
     static async loadView(ControllerClass) {
         const viewName = ControllerClass.name.replace('Controller', '');
         let html;
@@ -36,7 +45,7 @@ class PocketFX {
         if (this.#viewCache.has(viewName)) {
             html = this.#viewCache.get(viewName);
         } else {
-            const response = await fetch(`/src/views/${viewName}.html`);
+            const response = await fetch(`${this.viewPath}${viewName}.html`);
             if (!response.ok) {
                 throw new Error(`Failed to load view ${viewName}: ${response.status}`);
             }
@@ -52,7 +61,6 @@ class PocketFX {
         Array.from(doc.body.childNodes).forEach(node => rootNode.appendChild(node));
 
         const controller = new ControllerClass();
-        controller.pb = pb;                  // legacy global reference
         controller.root = rootNode;
         controller.services = this.services; // lightweight DI container
 

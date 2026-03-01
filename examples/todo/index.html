@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Ejemplo PocketFX - ToDo</title>
-    <!-- enlaza los estilos desde el paquete instalado -->
-    <link rel="stylesheet" href="node_modules/pocketfx/src/core/pocketfx.css">
+    <!-- Pico CSS básico desde CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+    <!-- estilos de PocketFX (modales, etc.) -->
+    <link rel="stylesheet" href="/src/core/pocketfx.css">
 </head>
 <body>
-    <h1>ToDo demo</h1>
-    <div id="app"></div>
+    <main class="container">
+        <h1>ToDo demo</h1>
+        <div id="app"></div>
+    </main>
 
     <script type="module">
-        import { SceneManager } from './node_modules/pocketfx/build/pocketfx.esm.js';
+        import { SceneManager } from '/build/pocketfx.esm.js';
         import { TodoController } from './src/controllers/TodoController.js';
 
         document.addEventListener('DOMContentLoaded', () => {

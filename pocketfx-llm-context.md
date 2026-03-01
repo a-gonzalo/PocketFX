@@ -45,6 +45,13 @@ Al escribir código para este proyecto, DEBES obedecer las siguientes reglas:
 6. **Instancia Global:** La instancia de PocketBase siempre estará disponible dentro del controlador como `this.pb`. La referencia a la raíz de la vista actual es `this.root`.
 
 ## 3. Navegación (Stages y Scenes)
+
+> 💡 **Importante**: la ruta donde se cargan las vistas es relativa por defecto. El motor
+> utiliza `PocketFX.viewPath` para componer la URL del HTML (inicialmente `'src/views/'`).
+> Esto permite que aplicaciones que viven en subdirectorios (como el ejemplo
+> `examples/todo`) funcionen sin cambios. Se puede sobrescribir si tu estructura es
+> diferente, p.ej. `PocketFX.viewPath = '/src/views/';`.
+
 - **SceneManager:** Se usa para inyectar una escena dentro de un contenedor existente (como un panel principal).
   `SceneManager.setScene(this.mainRegion, DashboardController, initData);`
   - El gestor recuerda qué controlador estaba en el contenedor y llama a `onHide()` antes de reemplazarlo y a `onShow()` después de cargar la nueva escena.
